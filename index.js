@@ -24,7 +24,7 @@ async function runServerlessDeploy() {
   await exeq(
     `echo Running sls deploy with args ${ARGS}...`,
     `if [ ${process.env.AWS_ACCESS_KEY_ID} ] && [ ${process.env.AWS_SECRET_ACCESS_KEY} ]; then
-      sls config credentials --provider aws --key ${process.env.AWS_ACCESS_KEY_ID} --secret ${process.env.AWS_SECRET_ACCESS_KEY} ${ARGS} --verbose
+      sls config credentials --provider aws --key ${process.env.AWS_ACCESS_KEY_ID} --secret ${process.env.AWS_SECRET_ACCESS_KEY} --verbose
     fi`,
     `sls deploy ${ARGS} --verbose`
   )
